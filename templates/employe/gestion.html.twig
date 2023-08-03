@@ -35,8 +35,8 @@
                     <td>{{ employe.datedenaissance|date("d/m/Y") }}</td>
                     <td>
                         
-                        <a href="{{ path('employe_modifier', {id: employe.id} ) }}" class="text-warning">Modifier</a>
-                        <a href="{{ path('employe_supprimer', {id: employe.id} ) }}" class="text-danger">Supprimer</a>
+                        <a href="{{ path('employe_modifier', {id: employe.id} ) }}" class="text-warning"><i class="bi bi-pencil"></i></a>
+                        <a href="{{ path('employe_supprimer', {id: employe.id} ) }}" class="text-danger"><i class="bi bi-trash3 text-danger"></i></a>
                     </td>
                 </tr>
                 
