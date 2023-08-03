@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CompanyEmployesRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CompanyEmployesRepository::class)]
 class CompanyEmployes
@@ -14,24 +15,31 @@ class CompanyEmployes
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column(length: 255)]
     private ?string $telephone = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column(length: 255)]
     private ?string $poste = null;
 
+    #[Assert\NotBlank(message: "ce champ ne peut être vide")]
     #[ORM\Column]
     private ?int $salaire = null;
 

@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Gestion des employés{% endblock %}
+
+{% block body %}
+<div class="m-2">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>prenom</th>
+                <th>nom</th>
+                <th>telephone</th>
+                <th>email</th>
+                <th>adresse</th>
+                <th>poste</th>
+                <th>salaire</th>
+                <th>date de naissance</th>
+                <th>option</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for employe in employes %}
+
+                <tr>
+                    <td>{{ employe.id }}</td>
+                    <td>{{ employe.prenom }}</td>
+                    <td>{{ employe.nom }}</td>
+                    <td>{{ employe.telephone }}</td>
+                    <td>{{ employe.email }}</td>
+                    <td>{{ employe.adresse }}</td>
+                    <td>{{ employe.poste }}</td>
+                    <td>{{ employe.salaire }}</td>
+                    <td>{{ employe.datedenaissance|date("d/m/Y") }}</td>
+                    <td>
+                        
+                        <a href="{{ path('employe_modifier', {id: employe.id} ) }}" class="text-warning">Modifier</a>
+                        <a href="{{ path('employe_supprimer', {id: employe.id} ) }}" class="text-danger">Supprimer</a>
+                    </td>
+                </tr>
+                
+            {% endfor %}
+        
+        </tbody>
+    </table>
+
+</div>
+
+
+{% endblock %}

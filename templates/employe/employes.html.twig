@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Nos employés{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-4">Nos employés</h1>
+    
+    <div class="container">
+        {{ form_start(formEmploye, {
+            attr: { novalidate: "novalidate"}
+        })}}
+
+
+            {{form_row(formEmploye.prenom, {
+                label: "Prénom",
+                attr: {placeholder: "Saisissez le prénom"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.nom, {
+                label: "Nom",
+                attr: {placeholder: "Saisissez le nom"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.telephone, {
+                label: "Téléphone",
+                attr: {placeholder: "Saisissez le téléphone"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.email, {
+                label: "Email",
+                attr: {placeholder: "Saisissez l'email"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.adresse, {
+                label: "Adresse",
+                attr: {placeholder: "Saisissez l'adresse"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.poste, {
+                label: "Poste",
+                attr: {placeholder: "Saisissez le poste"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.salaire, {
+                label: "Salaire",
+                attr: {placeholder: "Saisissez le salaire"}
+            }) }}
+
+            {{ form_start(formEmploye)}}
+            {{form_row(formEmploye.datedenaissance, {
+                label: "Date de naissance",
+            }) }}
+
+        {{ form_end(formEmploye)}}
+    </div>
+
+{% endblock %}
