@@ -24,9 +24,9 @@ class EmployeController extends AbstractController
      // 2 routes (ajout) & (modifier) dans la même méthode
     #[Route('employer/modifier/{id}', name: 'employe_modifier')]
     #[Route('/employe/employes', name: 'employe_ajout')]
-    public function ajout(Request $request, EntityManagerInterface $manager, CompanyEmployes $employes = null) :Response
+    public function ajout(Request $request, EntityManagerInterface $manager, CompanyEmployes $employe = null) :Response
     {
-        if ($employes == null) {
+        if ($employe == null) {
             $employe = new CompanyEmployes;
         }
         
