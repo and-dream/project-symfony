@@ -30,7 +30,7 @@ class EmployeController extends AbstractController
             $employe = new CompanyEmployes;
         }
         
-        $employe = new CompanyEmployes;
+        
         $form = $this->createForm(EmployesType::class, $employe);
 
         $form->handleRequest($request);
@@ -38,11 +38,12 @@ class EmployeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($employe);
             $manager->flush();
-            return $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('employe_gestion');
         }
         
         return $this->render('employe/employes.html.twig', [
             'formEmploye' => $form,
+            'editMode' => $employe->getId() !== null
         ]);
         //le tableau sert à envoyer les données dans ma page de vue, pour pouvoir l'utiliser il faut en amont dans mon controller passer par un tableau
     }
@@ -56,7 +57,7 @@ class EmployeController extends AbstractController
         ]);
     }
  
-    #[Route('/employe/supprimer{id}', name: 'employe_supprimer')]
+    #[Route('/employe/supprimer/{id}', name: 'employe_supprimer')]
     public function supprimer(EntityManagerInterface $manager, CompanyEmployes $employe)
     {    
         $manager->remove($employe);
