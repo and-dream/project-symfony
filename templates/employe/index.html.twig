@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EmployeController!{% endblock %}
+{% block title %}Bienvenue!{% endblock %}
 
 {% block body %}
-<h1>{{title}}</h1>
+    <h1 class="text-center">{{title}}</h1>
+    <div class="text-center">
+    <img class="img-fluid" src="{{ asset('img/company.jpg') }}" alt="employes de l'entreprise">
+    </div>
 {% endblock %}
